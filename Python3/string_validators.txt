@@ -1,0 +1,19 @@
+Problem Link : https://www.hackerrank.com/challenges/string-validators/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+
+if __name__ == '__main__':
+    s = input()
+    b = [False, False, False, False, False]
+    for i in s:
+        if i.isalnum() == True:
+            b[0] = True
+        if i.isalpha() == True:
+            b[1] = True
+        if i.isdigit() == True:
+            b[2] = True
+        if i.islower() == True:
+            b[3] = True
+        if i.isupper() == True:
+            b[4] = True
+for i in b:
+    print (i)
