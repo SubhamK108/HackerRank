@@ -1,0 +1,20 @@
+Problem Link : https://www.hackerrank.com/challenges/find-a-string/problem?h_r=next-challenge&h_v=zen
+
+
+
+def count_substring(string, sub_string):
+    p = 0
+    l_st = len(string)
+    l_s_st = len(sub_string)
+    for i in range(0, l_st):
+        temp = string[i : i+l_s_st]
+        if temp == sub_string:
+            p = p + 1
+    return (p)
+    
+if __name__ == '__main__':
+    string = input().strip()
+    sub_string = input().strip()
+    
+    count = count_substring(string, sub_string)
+    print(count)
