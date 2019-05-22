@@ -1,0 +1,20 @@
+Problem Link : https://www.hackerrank.com/challenges/designer-door-mat/problem?h_r=next-challenge&h_v=zen
+
+
+
+N, M = map(int, input().split(' '))
+D = 'WELCOME'
+D1 = '.|.'
+
+#For the upper design
+for i in range(0, N//2):
+    m = 2*i + 1
+    print((D1*m).center(M, '-'))
+
+#For the WELCOME design
+print(D.center(M, '-'))
+
+#For the lower design
+for i in range(N//2 + 1, N):
+    m = 2*(N-1-i) + 1
+    print((D1*m).center(M, '-'))
