@@ -1,0 +1,62 @@
+
+
+Problem Link: https://www.hackerrank.com/challenges/capitalize/problem
+
+
+
+
+
+
+
+
+
+
+
+
+def capitalize(name):
+    l = list(name.split(' '))
+    for m in l:
+        l[l.index(m)] = m.capitalize()
+    return ' '.join(l)
+
+
+if __name__ == '__main__':
+    name = input()
+    print(capitalize(name))
+    
+    
+    
+    
+    
+    
+              OR
+
+
+
+
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the solve function below.
+def solve(s):
+    l = list(s.split(' '))
+    for m in l:
+        l[l.index(m)] = m.capitalize()
+    return ' '.join(l)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = solve(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
