@@ -1,0 +1,32 @@
+
+
+Problem Link: https://www.hackerrank.com/challenges/merge-the-tools/problem
+
+
+
+
+
+
+def remove_duplicates(string):
+    unique_string = []
+    for char in string:
+        if char not in unique_string:
+            unique_string.append(char)
+    return ''.join(unique_string)
+
+
+def merge_the_tools(string, k):
+    l = list(reversed(string))
+    n = len(string)
+    subsegments = n // k
+    for i in range(subsegments):
+        output = ''
+        for j in range(k):
+            output += l.pop()
+        u = remove_duplicates(output)
+        print(u)
+
+
+if __name__ == '__main__':
+    string, k = input(), int(input())
+    merge_the_tools(string, k)
