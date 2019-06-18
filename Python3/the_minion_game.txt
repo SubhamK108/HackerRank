@@ -1,0 +1,35 @@
+
+
+Problem Link: https://www.hackerrank.com/challenges/the-minion-game/problem
+
+
+
+
+
+
+
+
+
+
+
+def minion_game(string):
+    vowels = ['A', 'E', 'I', 'O', 'U']
+    length = len(string)
+    kevin_points = 0
+    stuart_points = 0
+    for i in range(length):
+        if string[i].upper() in vowels:
+            kevin_points += length - i
+        else:
+            stuart_points += length - i
+    if kevin_points > stuart_points:
+        print(f'Kevin {kevin_points}')
+    elif kevin_points < stuart_points:
+        print(f'Stuart {stuart_points}')
+    elif kevin_points == stuart_points:
+        print('Draw')
+
+
+if __name__ == '__main__':
+    s = input()
+    minion_game(s)
