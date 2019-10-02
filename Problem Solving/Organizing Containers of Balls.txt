@@ -1,0 +1,24 @@
+Problem Link: https://www.hackerrank.com/challenges/organizing-containers-of-balls/problem
+
+
+Solution (Python 3):
+
+
+def organizingContainers(container):
+    n = len(container)
+    Row_Sum = []
+    Col_Sum = []
+    for i in range(n):
+        Sum_of_Rows = 0
+        Sum_of_Cols = 0
+        for j in range(n):
+            Sum_of_Rows += container[i][j]
+            Sum_of_Cols += container[j][i]
+        Row_Sum.append(Sum_of_Rows)
+        Col_Sum.append(Sum_of_Cols)
+    Row_Sum.sort()
+    Col_Sum.sort()
+    for i in range(n):
+        if Row_Sum[i] != Col_Sum[i]:
+            return 'Impossible'
+    return 'Possible'
