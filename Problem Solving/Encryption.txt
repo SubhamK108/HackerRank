@@ -1,0 +1,36 @@
+Problem Link: https://www.hackerrank.com/challenges/encryption/problem
+
+
+
+
+Solutin (Python 3):
+
+
+
+def encryption(s):
+    text = list(s.split())
+    filtered_text = ''.join(text)
+    length = len(filtered_text)
+    s = math.sqrt(length)
+    c = math.ceil(s)
+    f = math.floor(s)
+    if c * f < length:
+        f += 1
+    encrypted = []
+    p = 0
+    for i in range(f):
+        t = ''
+        for j in range(c):
+            if p >= length:
+                break
+            t += filtered_text[p]
+            p += 1
+        encrypted.append(t)
+    text = ''
+    for p in range(c):
+        for i in range(f):
+            if p >= len(encrypted[i]):
+                break
+            text += encrypted[i][p]
+        text += ' '
+    return text
